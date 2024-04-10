@@ -1,11 +1,11 @@
 const express  = require('express')
 const app = express()
-const quiz = require("./routes/quiz")
 const cors = require("cors")
 const mongoose = require("mongoose")
-require("dotenv").config()
-app.use(express.urlencoded({extended: false}))
+require("dotenv").config();
 
+app.use(express.urlencoded({extended: false}))
+app.use(cors())
 
 
 mongoose
@@ -19,6 +19,6 @@ app.get("/", (req, res) => {
 
 
 
-app.listen(8000 || process.env.PORT, () => {
+app.listen(8001 || process.env.PORT, () => {
   console.log("app is connected and listening on port 8000");
 });
